@@ -1,129 +1,158 @@
-🎯 Real-Time Face Anti-Spoofing Using Depth & Texture Analysis
+# 🎯 Real-Time Face Anti-Spoofing Using Depth & Texture Analysis
 
-An AI-powered real-time face liveness detection system that prevents spoofing attacks such as photo, video replay, and mask attacks. This project uses a dual deep learning architecture combining texture and depth features for robust security authentication.
+An **AI-powered real-time face liveness detection system** designed to prevent spoofing attacks such as **photo attacks, video replay attacks, and mask attacks**.  
 
-🧠 Features
+This project implements a **dual deep learning architecture** combining **Texture (RGB) features** and **Depth (3D structural) features** for robust and secure authentication.
 
-🎥 Real-time webcam-based face detection
+---
 
-📸 Detects photo spoof attacks
+## 🧠 Key Features
 
-📱 Detects video replay attacks
+- 🎥 Real-time webcam-based face detection  
+- 📸 Detects photo spoof attacks  
+- 📱 Detects video replay attacks  
+- 🎭 Detects mask-based attacks  
+- 🧠 Dual-model architecture (Texture + Depth)  
+- 🔗 Feature-level fusion for improved accuracy  
+- 📊 Accuracy, Loss & ROC curve evaluation  
+- ⚖️ Class imbalance handling  
+- ⚡ Fast and lightweight inference  
 
-🎭 Detects mask-based attacks
+---
 
-🧠 Dual-model architecture (Texture + Depth)
+## 🛠 Tech Stack
 
-🔗 Feature-level fusion for improved accuracy
+### 🖥 Frontend (Optional Deployment)
+- HTML  
+- CSS  
+- JavaScript  
+- Angular (if integrated)  
+- Bootstrap / Custom UI  
 
-📊 Accuracy, Loss, ROC curve evaluation
+### ⚙️ Backend
+- Python  
+- TensorFlow / Keras  
+- OpenCV  
+- NumPy  
+- Scikit-learn  
+- Matplotlib  
 
-⚖️ Class imbalance handling
+---
 
-⚡ Fast and lightweight inference
+## 🧠 Machine Learning Architecture
 
-🛠 Tech Stack
-🖥 Frontend (Optional Deployment)
+- Convolutional Neural Networks (CNN)  
+- Texture Model (RGB-based feature extraction)  
+- Depth Model (Depth-map based feature extraction)  
+- Feature Fusion Model  
+- Binary Classification (Real vs Spoof)  
 
-HTML, CSS, JavaScript
+---
+---
 
-Angular (if integrated)
+## 🏗 System Architecture
 
-Bootstrap / Custom UI
+```
++------------------+
+|   Webcam Input   |
++------------------+
+          │
+          ▼
++--------------------------------+
+| Face Detection & Preprocessing |
++--------------------------------+
+          │
+          ▼
++-----------------------+     +-----------------------+
+|   Texture CNN Model   |     |    Depth CNN Model    |
+|    (RGB Features)     |     |   (Depth Features)    |
++-----------------------+     +-----------------------+
+          │                             │
+          └───────────────┬─────────────┘
+                          ▼
+                +--------------------+
+                |   Feature Fusion   |
+                |  (Concatenation)   |
+                +--------------------+
+                          │
+                          ▼
+                +--------------------+
+                |  Fully Connected   |
+                |     Classifier     |
+                +--------------------+
+                          │
+                          ▼
+                +--------------------+
+                |     Prediction     |
+                |    ✅ REAL FACE    |
+                |    ❌ SPOOF ATTACK |
+                +--------------------+
+```
 
-⚙️ Backend
+### 🔄 Workflow Summary
 
-Python
+1. Webcam captures live video  
+2. Face region is detected and preprocessed  
+3. Texture CNN extracts surface-level features  
+4. Depth CNN extracts 3D structural features  
+5. Features are concatenated (fusion)  
+6. Final classifier predicts **Real vs Spoof**
 
-TensorFlow / Keras
+---
 
-OpenCV
+## 📊 Model Performance
 
-NumPy
+| Model           | Accuracy |
+|---------------|----------|
+| Texture Model | ~87%     |
+| Depth Model   | ~91%     |
+| 🔥 Fusion Model | **~93% (Best Performance)** |
 
-Scikit-learn
+### 📈 Evaluation Metrics
 
-Matplotlib
+- Accuracy  
+- Precision  
+- Recall  
+- F1-Score  
+- ROC Curve  
+- Confusion Matrix  
 
-🧠 Machine Learning
+---
 
-Convolutional Neural Networks (CNN)
+## 🔐 Real-World Applications
 
-Texture Model (RGB-based)
+- 🔐 Banking & Financial Authentication  
+- 🏢 Secure Office Entry Systems  
+- 📱 Mobile Face Unlock Systems  
+- 🛂 Border & Surveillance Systems  
+- 🧑‍💻 Online Exam Proctoring  
 
-Depth Model (Depth-map based)
+---
 
-Feature Fusion Model
+## 🚀 Future Enhancements
 
-Binary Classification (Real vs Spoof)
+- 🔬 Transformer-based backbone (Vision Transformer - ViT)  
+- 🧠 Attention-based feature fusion  
+- 📱 Mobile deployment optimization  
+- ☁️ REST API deployment  
+- 🎯 Grad-CAM explainability  
+- 🌍 Multi-dataset generalization testing  
 
-🏗 System Architecture
+---
 
-Webcam captures live video
+## 👨‍💻 Author
 
-Face region extracted & preprocessed
+### Bala  
+🎓 **B.Tech – Artificial Intelligence & Data Science**  
+🔍 Passionate about **AI Security, Deep Learning & Computer Vision**
 
-Texture model extracts surface-level features
+---
 
-Depth model extracts structural 3D features
+### 📫 Connect With Me
+- 💼 LinkedIn: *(https://www.linkedin.com/in/balamurugan-s-b28635255)*
+- 📧 Email: *(balamurugan.s6f@gmail.com)*
 
-Feature vectors concatenated
+---
 
-Fusion classifier predicts:
+> 🚀 Building intelligent and secure AI systems for real-world applications.
 
-✅ REAL FACE
-
-❌ SPOOF ATTACK
-
-📊 Model Performance
-
-Texture Model Accuracy: ~87%
-
-Depth Model Accuracy: ~91%
-
-Fusion Model Accuracy: ~93% (Best Performance)
-
-Evaluation Metrics:
-
-Accuracy
-
-Precision
-
-Recall
-
-F1-Score
-
-ROC Curve
-
-Confusion Matrix
-🔐 Real-World Applications
-
-🔐 Banking & Financial Authentication
-
-🏢 Secure Office Entry Systems
-
-📱 Mobile Face Unlock Systems
-
-🛂 Border & Surveillance Systems
-
-🧑‍💻 Online Exam Proctoring
-
-🚀 Future Enhancements
-
-🔬 Transformer-based backbone (ViT)
-
-🧠 Attention-based feature fusion
-
-📱 Mobile deployment
-
-☁️ REST API deployment
-
-🎯 Grad-CAM explainability
-
-🌍 Multi-dataset generalization testing
-
-👨‍💻 Author
-
-Bala
-B.Tech Artificial Intelligence & Data Science
-Focused on AI Security, Deep Learning & Computer Vision
