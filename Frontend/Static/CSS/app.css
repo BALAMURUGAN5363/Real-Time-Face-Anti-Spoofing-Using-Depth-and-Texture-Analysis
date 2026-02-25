@@ -1,0 +1,208 @@
+:root {
+  --bg: #0f172a;
+  --card: #111827;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --primary: #22c55e;
+  --danger: #ef4444;
+  --warn: #f59e0b;
+  --accent: #3b82f6;
+  --border: #1f2937;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background: radial-gradient(1000px 600px at 20% 10%, #111827, #0b1020);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.03));
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  width: 100%;
+  max-width: 960px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.2px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 16px;
+}
+@media (max-width: 860px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+.video-wrap {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #0b1020;
+}
+
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border: 2px dashed rgba(255,255,255,0.12);
+  border-radius: 12px;
+}
+
+.panel {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  background: rgba(17,24,39,0.6);
+}
+
+.panel h3 {
+  margin: 0 0 8px 0;
+  font-size: 1rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  border: 1px solid var(--border);
+  background: rgba(17,24,39,0.6);
+}
+
+.badge-idle { color: var(--muted); }
+.badge-real { color: var(--primary); border-color: rgba(34,197,94,0.3); background: rgba(34,197,94,0.08); }
+.badge-spoof { color: var(--danger); border-color: rgba(239,68,68,0.3); background: rgba(239,68,68,0.09); }
+.badge-warn { color: var(--warn); border-color: rgba(245,158,11,0.3); background: rgba(245,158,11,0.08); }
+.badge-error { color: #e11d48; border-color: rgba(225,29,72,0.3); background: rgba(225,29,72,0.08); }
+
+.status {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.btn {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #0b1329;
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  border-color: rgba(59,130,246,0.4);
+  background: linear-gradient(180deg, rgba(59,130,246,0.25), rgba(59,130,246,0.18));
+}
+
+.btn-danger {
+  border-color: rgba(239,68,68,0.4);
+  background: linear-gradient(180deg, rgba(239,68,68,0.25), rgba(239,68,68,0.18));
+}
+
+.helper {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Login */
+.form {
+  display: grid;
+  gap: 12px;
+}
+
+.input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: rgba(17,24,39,0.6);
+  color: var(--text);
+}
+.input::placeholder { color: #94a3b8; }
+
+/* Admin table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+.table th, .table td {
+  border: 1px solid var(--border);
+  padding: 10px;
+  text-align: center;
+}
+.table th {
+  background: rgba(17,24,39,0.7);
+  font-weight: 700;
+}
+.thumb {
+  width: 140px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+/* Exam/Blocked banners */
+.banner {
+  max-width: 720px;
+  margin: 60px auto;
+  text-align: center;
+}
+.banner h2 {
+  margin: 0 0 12px 0;
+  font-size: 1.6rem;
+}
+.banner p {
+  color: var(--muted);
+}
+.banner .ok { color: var(--primary); }
+.banner .no { color: var(--danger); }
