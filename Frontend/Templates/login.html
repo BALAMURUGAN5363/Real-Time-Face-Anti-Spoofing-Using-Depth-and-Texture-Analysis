@@ -1,0 +1,32 @@
+<!-- Home + Student Login (same route "/") -->
+<link rel="stylesheet" href="/static/css/app.css">
+
+<div class="page">
+  <div class="card" style="max-width:720px">
+    <div class="header">
+      <div class="title">Exam Authentication Portal</div>
+    </div>
+
+    <p class="helper">Choose an option:</p>
+    <div class="actions">
+      <button id="toggleLogin" type="button" class="btn btn-primary">Student Login</button>
+      <a class="btn" href="/admin-login">Admin Login</a>
+    </div>
+
+    <form id="loginForm" method="post" class="form" style="display:none; margin-top:16px;">
+      <input name="user_id" class="input" placeholder="User ID" required>
+      <input name="password" class="input" type="password" placeholder="Password" required>
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+
+    <div class="helper">After login, live anti-spoofing will verify you before accessing the exam.</div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('toggleLogin')?.addEventListener('click', () => {
+    const f = document.getElementById('loginForm');
+    if (!f) return;
+    f.style.display = (f.style.display === 'none' || f.style.display === '') ? 'grid' : 'none';
+  });
+</script>
